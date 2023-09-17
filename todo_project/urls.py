@@ -18,5 +18,7 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('todo_app.urls')),
+    path('api-auth/', include('rest_framework.urls')),
+    path('', include('todo_app.traditional_views.urls')),
+    path('', include('todo_app.api.urls')),
 ]
